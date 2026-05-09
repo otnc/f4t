@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/otoneko1102/f4t.git"
+    "url": "git+https://github.com/otnc/f4t.git"
   },
   "keywords": [
     "time",
@@ -17,7 +17,7 @@
   "author": "otoneko.",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/otoneko1102/f4t/issues"
+    "url": "https://github.com/otnc/f4t/issues"
   },
-  "homepage": "https://github.com/otoneko1102/f4t#readme"
+  "homepage": "https://github.com/otnc/f4t#readme"
 }

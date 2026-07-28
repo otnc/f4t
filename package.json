@@ -1,10 +1,32 @@
 {
   "name": "f4t",
-  "version": "1.1.0",
-  "description": "A package for formatting times.",
-  "main": "index.js",
+  "version": "2.0.0",
+  "description": "formatter for timestamps — a tiny time string parser/formatter (w/d/h/m/s/ms) with negative time support.",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsup",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run lint && npm run test && npm run build"
   },
   "repository": {
     "type": "git",
@@ -12,12 +34,32 @@
   },
   "keywords": [
     "time",
-    "format"
+    "format",
+    "duration",
+    "parse",
+    "timestamps",
+    "milliseconds",
+    "formatter"
   ],
+  "engines": {
+    "node": ">=18"
+  },
   "author": "otoneko.",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/otnc/f4t/issues"
   },
-  "homepage": "https://github.com/otnc/f4t#readme"
+  "homepage": "https://github.com/otnc/f4t#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^26.1.2",
+    "eslint": "^10.8.0",
+    "jest": "^30.4.2",
+    "prettier": "^3.9.6",
+    "ts-jest": "^29.4.12",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.65.0"
+  }
 }

@@ -49,6 +49,9 @@ jobs:
       # Trusted publishing: npm authenticates via the GitHub Actions OIDC token,
       # so no NPM_TOKEN secret is needed. Requires linking this repo/workflow to
       # the npm package on npm.com (Provenance > Trusted Publisher).
+      # npm 10 (bundled with Node 18) doesn't support provenance via OIDC, so
+      # upgrade to npm 11 first — same approach as otnc/hono-feed.
+      - run: npm install -g npm@11
       - run: npm publish --access public --provenance
 
       - name: Commit, tag and push
